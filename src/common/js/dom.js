@@ -1,3 +1,4 @@
+// 检查DOM元素
 export function addClass (el, className) {
   if (hasClass(el, className)) {
     return
