@@ -30,7 +30,7 @@ export default {
     },
     interval: {
       type: Number,
-      default: 2000
+      default: 4000
     }
   },
   mounted () {
@@ -98,6 +98,10 @@ export default {
         this.slider.next()
       }, this.interval)
     }
+  },
+  destroyed () {
+    // 清理计时器资源
+    clearTimeout(this.timer)
   }
 }
 </script>
