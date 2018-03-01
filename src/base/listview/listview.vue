@@ -103,7 +103,6 @@ export default {
       this.scrollY = pos.y
     },
     _scrollTo (index) {
-      console.log(index)
       if (!index && index !== 0) {
         return
       }
@@ -144,12 +143,10 @@ export default {
       this.currentIndex = listHeight.length - 1
     },
     diff (newVal) {
-      console.log(newVal)
       let fixedTop = (newVal > 0 && newVal < TITLE_HEIGHT) ? newVal - TITLE_HEIGHT : 0
       if (this.fixedTop === fixedTop) {
         return
       }
-      console.log(fixedTop)
       this.fixedTop = fixedTop
       this.$refs.fixed.style.transform = `translate3d(0, ${fixedTop}px, 0)`
     }

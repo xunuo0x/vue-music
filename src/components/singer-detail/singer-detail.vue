@@ -5,7 +5,28 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+import {getSingerDetail} from 'api/singer'
+
 export default {
+  created () {
+    console.log(this._getSingerDetail())
+  },
+  methods: {
+    _getSingerDetail () {
+      if (!this.singer.id) {
+        this.$router.push('/singer')
+      }
+      getSingerDetail(this.singer.id).then((res) => {
+        console.log(res)
+      })
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'singer'
+    ])
+  }
 }
 </script>
 
