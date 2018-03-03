@@ -15,6 +15,7 @@ export function createSong (musicData) {
   return new Song({
     id: musicData.songid,
     mid: musicData.songmid,
+    name: musicData.songname,
     singer: filterSinger(musicData.singer),
     album: musicData.albumname,
     duration: musicData.interval,
